@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+                           http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd">
+
+    <!--1. 提取list集合类型属性注入-->
+    <util:list id="booklist">
+        <value>发达</value>
+        <value>嘎达是</value>
+        <value>盎司访问</value>
+        <value>regards</value>
+    </util:list>
+
+    <!--2. 提取list集合类型属性注入使用-->
+    <!--
+    scope:
+        1. singleton,默认值，表示单实例对象，
+           加载配置文件时，就会完成创建单实例对象
+        2. prototype,表示多实例对象
+           在调用getBean方法时才会创建新的实例对象
+        3. requset:一次请求
+
+        4. session:一次回话
+    -->
+    <bean id="book" class="com.atguigu.spring5.collectoinType.Book" scope="prototype">
+        <property name="list" ref="booklist"></property>
+    </bean>
+</beans>
