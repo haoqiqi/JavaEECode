@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!--配置User对象创造-->
+    <bean id = "student" class="com.atguigu.spring5.Demo01.Student">
+        <constructor-arg name="num" value="1"></constructor-arg>
+        <constructor-arg name="name" value="张三"></constructor-arg>
+        <!--或者-->
+        <!--<constructor-arg index="0" value="张三"></constructor>-->
+        <!--<constructor-arg name="1" value="张三"></constructor>-->
+    </bean>
+
+</beans>

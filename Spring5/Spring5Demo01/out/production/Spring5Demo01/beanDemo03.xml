@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!--配置对象创造-->
+    <bean id = "book" class="com.atguigu.spring5.Demo03.Book">
+        <property name="bname" value="safa"></property>
+        <property name="bauthor" value="asf"></property>
+        <!--1. 属性中包含空值-->
+        <!--<property name="baddress">-->
+            <!--<null/>-->
+        <!--</property>-->
+
+        <!--2. 属性中包含特殊符号
+        2.1 把<>进行转义
+        2.2 把带特殊符号的内容写到CDATA-->
+        <!--//方法一：转义字符-->
+        <!--<property name="baddress" value="&lt;北京&dt;"></property>-->
+        <!--//方法二：CDATA-->
+        <property name="baddress">
+            <value><![CDATA[<北京>]]></value>
+        </property>
+
+
+
+    </bean>
+
+</beans>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!--配置对象创造-->
+    <bean id = "emplyee" class= "com.atguigu.spring5.Demo05.Emplyee.Emplyee">
+        <!--//设置两个普通属性-->
+        <property name="Emplyee_name" value="张三"> </property>
+        <property name="Emplyee_gender" value="男"> </property>
+        <!--//设置一个对象-->
+        <property name="department">
+            <bean id="dept" class="com.atguigu.spring5.Demo05.Department.Department">
+                <property name="dname" value = "财务部"></property>
+            </bean>
+        </property>
+    </bean>
+</beans>
